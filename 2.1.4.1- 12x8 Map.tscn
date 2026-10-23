@@ -1,0 +1,44 @@
+[gd_scene format=4 uid="uid://dtgipps2hgn6d"]
+
+[ext_resource type="Texture2D" uid="uid://blc77mbfgmsqq" path="res://Tiny_War_Assets/Terrain/Tileset/Tilemap_color1.png" id="1_qd8ff"]
+[ext_resource type="Texture2D" uid="uid://bgk3gmrcyji5g" path="res://Tiny_War_Assets/Terrain/Decorations/Rocks/Rock1.png" id="2_admde"]
+[ext_resource type="Texture2D" uid="uid://bd4p82647lblm" path="res://Tiny_War_Assets/Buildings/Red Buildings/Castle.png" id="3_v42vf"]
+[ext_resource type="Texture2D" uid="uid://l36b3udoiqe3" path="res://Tiny_War_Assets/Buildings/Blue Buildings/Castle.png" id="4_1f0x8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xe3us"]
+texture = ExtResource("1_qd8ff")
+26:6/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kda8w"]
+texture = ExtResource("2_admde")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3plq0"]
+sources/0 = SubResource("TileSetAtlasSource_xe3us")
+sources/1 = SubResource("TileSetAtlasSource_kda8w")
+
+[node name="TinyWarMap" type="Node2D" unique_id=223736293]
+position = Vector2(-21, -46)
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=73315695]
+position = Vector2(69, 47)
+tile_map_data = PackedByteArray("AAAAAAAAAAAaAAYAAAD9/wAAAAAaAAYAAAD9/wEAAAAaAAYAAAD9/wIAAAAaAAYAAAD9/wMAAAAaAAYAAAD9/wQAAAAaAAYAAAD9/wUAAAAaAAYAAAD9/wYAAAAaAAYAAAD9/wcAAAAaAAYAAAD+/wAAAAAaAAYAAAD+/wEAAAAaAAYAAAD+/wIAAAAaAAYAAAD+/wMAAAAaAAYAAAD+/wQAAAAaAAYAAAD+/wUAAAAaAAYAAAD+/wYAAAAaAAYAAAD+/wcAAAAaAAYAAAD//wAAAAAaAAYAAAD//wEAAAAaAAYAAAD//wIAAAAaAAYAAAD//wMAAAAaAAYAAAD//wQAAAAaAAYAAAD//wUAAAAaAAYAAAD//wYAAAAaAAYAAAD//wcAAAAaAAYAAAAAAAEAAAAaAAYAAAAAAAIAAAAaAAYAAAAAAAMAAAAaAAYAAAAAAAQAAAAaAAYAAAAAAAUAAAAaAAYAAAAAAAYAAAAaAAYAAAAAAAcAAAAaAAYAAAABAAAAAAAaAAYAAAABAAEAAAAaAAYAAAABAAIAAAAaAAYAAAABAAMAAAAaAAYAAAABAAQAAAAaAAYAAAABAAUAAAAaAAYAAAABAAYAAAAaAAYAAAABAAcAAAAaAAYAAAACAAAAAAAaAAYAAAACAAEAAAAaAAYAAAACAAIAAAAaAAYAAAACAAMAAAAaAAYAAAACAAQAAAAaAAYAAAACAAUAAAAaAAYAAAACAAYAAAAaAAYAAAACAAcAAAAaAAYAAAADAAAAAAAaAAYAAAADAAEAAAAaAAYAAAADAAIAAAAaAAYAAAADAAMAAAAaAAYAAAADAAQAAAAaAAYAAAADAAUAAAAaAAYAAAADAAYAAAAaAAYAAAADAAcAAAAaAAYAAAAEAAAAAAAaAAYAAAAEAAEAAAAaAAYAAAAEAAIAAAAaAAYAAAAEAAMAAAAaAAYAAAAEAAQAAAAaAAYAAAAEAAUAAAAaAAYAAAAEAAYAAAAaAAYAAAAEAAcAAAAaAAYAAAAFAAAAAAAaAAYAAAAFAAEAAAAaAAYAAAAFAAIAAAAaAAYAAAAFAAMAAAAaAAYAAAAFAAQAAAAaAAYAAAAFAAUAAAAaAAYAAAAFAAYAAAAaAAYAAAAFAAcAAAAaAAYAAAAGAAAAAAAaAAYAAAAGAAEAAAAaAAYAAAAGAAIAAAAaAAYAAAAGAAMAAAAaAAYAAAAGAAQAAAAaAAYAAAAGAAUAAAAaAAYAAAAGAAYAAAAaAAYAAAAGAAcAAAAaAAYAAAAHAAAAAAAaAAYAAAAHAAEAAAAaAAYAAAAHAAIAAAAaAAYAAAAHAAMAAAAaAAYAAAAHAAQAAAAaAAYAAAAHAAUAAAAaAAYAAAAHAAYAAAAaAAYAAAAHAAcAAAAaAAYAAAAIAAAAAAAaAAYAAAAIAAEAAAAaAAYAAAAIAAIAAAAaAAYAAAAIAAMAAAAaAAYAAAAIAAQAAAAaAAYAAAAIAAUAAAAaAAYAAAAIAAYAAAAaAAYAAAAIAAcAAAAaAAYAAAA=")
+tile_set = SubResource("TileSet_3plq0")
+
+[node name="Obstacles" type="TileMapLayer" parent="." unique_id=1435680920]
+position = Vector2(21, -20)
+tile_map_data = PackedByteArray("AAABAAMAAQAAAAAAAAD9/wYAAQAAAAAAAAAFAAMAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_3plq0")
+
+[node name="Bases" type="Node2D" parent="." unique_id=1467523831]
+
+[node name="RedBase" type="Sprite2D" parent="Bases" unique_id=1053737765]
+position = Vector2(42.999992, 70)
+scale = Vector2(0.155, 0.155)
+texture = ExtResource("3_v42vf")
+
+[node name="BlueBase" type="Sprite2D" parent="Bases" unique_id=1420954131]
+position = Vector2(171, 141)
+scale = Vector2(0.155, 0.155)
+texture = ExtResource("4_1f0x8")
