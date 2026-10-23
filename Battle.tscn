@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dr1u1id3ovmqt"]
+
+[node name="Battle" type="Node2D" unique_id=1690988126]
+
+[node name="Label" type="Label" parent="." unique_id=502534477]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Welcome to TinyWar"
