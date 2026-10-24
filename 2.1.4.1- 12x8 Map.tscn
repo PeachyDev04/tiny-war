@@ -1,44 +1,226 @@
 [gd_scene format=4 uid="uid://dtgipps2hgn6d"]
 
-[ext_resource type="Texture2D" uid="uid://blc77mbfgmsqq" path="res://Tiny_War_Assets/Terrain/Tileset/Tilemap_color1.png" id="1_qd8ff"]
-[ext_resource type="Texture2D" uid="uid://bgk3gmrcyji5g" path="res://Tiny_War_Assets/Terrain/Decorations/Rocks/Rock1.png" id="2_admde"]
-[ext_resource type="Texture2D" uid="uid://bd4p82647lblm" path="res://Tiny_War_Assets/Buildings/Red Buildings/Castle.png" id="3_v42vf"]
-[ext_resource type="Texture2D" uid="uid://l36b3udoiqe3" path="res://Tiny_War_Assets/Buildings/Blue Buildings/Castle.png" id="4_1f0x8"]
+[ext_resource type="Texture2D" uid="uid://bhbtb0wgbav84" path="res://Tiny_War_Assets/Terrain/Tileset/Tilemap_color3.png" id="1_ijbqd"]
+[ext_resource type="Script" uid="uid://fyx8lhryhvmx" path="res://battle_grid.gd" id="2_7eff0"]
+[ext_resource type="Texture2D" uid="uid://cyrn3g2s4i3fa" path="res://Tiny_War_Assets/Buildings/Black Buildings/Tower.png" id="3_qd8ff"]
+[ext_resource type="Texture2D" uid="uid://dejiyr1o50ngx" path="res://Tiny_War_Assets/Buildings/Red Buildings/Tower.png" id="4_admde"]
+[ext_resource type="Texture2D" uid="uid://c3bl6x8u1u7rn" path="res://Tiny_War_Assets/Terrain/Resources/Wood/Trees/Tree1.png" id="5_admde"]
+[ext_resource type="Texture2D" uid="uid://c51b6hbs00bke" path="res://Tiny_War_Assets/Terrain/Resources/Meat/Sheep/Sheep_Move.png" id="6_v42vf"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xe3us"]
-texture = ExtResource("1_qd8ff")
-26:6/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kda8w"]
-texture = ExtResource("2_admde")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7eff0"]
+texture = ExtResource("1_ijbqd")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+0:4/0 = 0
+3:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+0:5/0 = 0
+3:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_3plq0"]
-sources/0 = SubResource("TileSetAtlasSource_xe3us")
-sources/1 = SubResource("TileSetAtlasSource_kda8w")
+[sub_resource type="TileSet" id="TileSet_xt50i"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_7eff0")
 
-[node name="TinyWarMap" type="Node2D" unique_id=223736293]
-position = Vector2(-21, -46)
+[sub_resource type="AtlasTexture" id="AtlasTexture_xt50i"]
+atlas = ExtResource("5_admde")
+region = Rect2(596.19495, 27.2, 161.17407, 228.8)
 
-[node name="Ground" type="TileMapLayer" parent="." unique_id=73315695]
-position = Vector2(69, 47)
-tile_map_data = PackedByteArray("AAAAAAAAAAAaAAYAAAD9/wAAAAAaAAYAAAD9/wEAAAAaAAYAAAD9/wIAAAAaAAYAAAD9/wMAAAAaAAYAAAD9/wQAAAAaAAYAAAD9/wUAAAAaAAYAAAD9/wYAAAAaAAYAAAD9/wcAAAAaAAYAAAD+/wAAAAAaAAYAAAD+/wEAAAAaAAYAAAD+/wIAAAAaAAYAAAD+/wMAAAAaAAYAAAD+/wQAAAAaAAYAAAD+/wUAAAAaAAYAAAD+/wYAAAAaAAYAAAD+/wcAAAAaAAYAAAD//wAAAAAaAAYAAAD//wEAAAAaAAYAAAD//wIAAAAaAAYAAAD//wMAAAAaAAYAAAD//wQAAAAaAAYAAAD//wUAAAAaAAYAAAD//wYAAAAaAAYAAAD//wcAAAAaAAYAAAAAAAEAAAAaAAYAAAAAAAIAAAAaAAYAAAAAAAMAAAAaAAYAAAAAAAQAAAAaAAYAAAAAAAUAAAAaAAYAAAAAAAYAAAAaAAYAAAAAAAcAAAAaAAYAAAABAAAAAAAaAAYAAAABAAEAAAAaAAYAAAABAAIAAAAaAAYAAAABAAMAAAAaAAYAAAABAAQAAAAaAAYAAAABAAUAAAAaAAYAAAABAAYAAAAaAAYAAAABAAcAAAAaAAYAAAACAAAAAAAaAAYAAAACAAEAAAAaAAYAAAACAAIAAAAaAAYAAAACAAMAAAAaAAYAAAACAAQAAAAaAAYAAAACAAUAAAAaAAYAAAACAAYAAAAaAAYAAAACAAcAAAAaAAYAAAADAAAAAAAaAAYAAAADAAEAAAAaAAYAAAADAAIAAAAaAAYAAAADAAMAAAAaAAYAAAADAAQAAAAaAAYAAAADAAUAAAAaAAYAAAADAAYAAAAaAAYAAAADAAcAAAAaAAYAAAAEAAAAAAAaAAYAAAAEAAEAAAAaAAYAAAAEAAIAAAAaAAYAAAAEAAMAAAAaAAYAAAAEAAQAAAAaAAYAAAAEAAUAAAAaAAYAAAAEAAYAAAAaAAYAAAAEAAcAAAAaAAYAAAAFAAAAAAAaAAYAAAAFAAEAAAAaAAYAAAAFAAIAAAAaAAYAAAAFAAMAAAAaAAYAAAAFAAQAAAAaAAYAAAAFAAUAAAAaAAYAAAAFAAYAAAAaAAYAAAAFAAcAAAAaAAYAAAAGAAAAAAAaAAYAAAAGAAEAAAAaAAYAAAAGAAIAAAAaAAYAAAAGAAMAAAAaAAYAAAAGAAQAAAAaAAYAAAAGAAUAAAAaAAYAAAAGAAYAAAAaAAYAAAAGAAcAAAAaAAYAAAAHAAAAAAAaAAYAAAAHAAEAAAAaAAYAAAAHAAIAAAAaAAYAAAAHAAMAAAAaAAYAAAAHAAQAAAAaAAYAAAAHAAUAAAAaAAYAAAAHAAYAAAAaAAYAAAAHAAcAAAAaAAYAAAAIAAAAAAAaAAYAAAAIAAEAAAAaAAYAAAAIAAIAAAAaAAYAAAAIAAMAAAAaAAYAAAAIAAQAAAAaAAYAAAAIAAUAAAAaAAYAAAAIAAYAAAAaAAYAAAAIAAcAAAAaAAYAAAA=")
-tile_set = SubResource("TileSet_3plq0")
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdoib"]
+atlas = ExtResource("6_v42vf")
+region = Rect2(384, 0, 128, 128)
 
-[node name="Obstacles" type="TileMapLayer" parent="." unique_id=1435680920]
-position = Vector2(21, -20)
-tile_map_data = PackedByteArray("AAABAAMAAQAAAAAAAAD9/wYAAQAAAAAAAAAFAAMAAQAAAAAAAAA=")
-tile_set = SubResource("TileSet_3plq0")
+[node name="BattleMap" type="Node2D" unique_id=1871358076]
 
-[node name="Bases" type="Node2D" parent="." unique_id=1467523831]
+[node name="Ground" type="TileMapLayer" parent="." unique_id=406509469]
+tile_map_data = PackedByteArray("AAAAAAgAAAAAAAIAAAAAAAkAAAAFAAQAAAABAAgAAAAGAAIAAAABAAkAAAAGAAQAAAAAAAcAAAAAAAEAAAAQAAgAAAAGAAIAAAAQAAkAAAAGAAQAAAARAAgAAAACAAIAAAARAAkAAAAHAAQAAAACAAgAAAAGAAIAAAACAAkAAAAGAAQAAAADAAgAAAAGAAIAAAADAAkAAAAGAAQAAAAEAAgAAAAGAAIAAAAEAAkAAAAGAAQAAAAGAAgAAAAGAAIAAAAGAAkAAAAGAAQAAAAFAAgAAAAGAAIAAAAFAAkAAAAGAAQAAAAHAAgAAAAGAAIAAAAHAAkAAAAGAAQAAAAIAAgAAAAGAAIAAAAIAAkAAAAGAAQAAAAJAAgAAAAGAAIAAAAJAAkAAAAGAAQAAAAKAAgAAAAGAAIAAAAKAAkAAAAGAAQAAAALAAgAAAAGAAIAAAALAAkAAAAGAAQAAAAMAAgAAAAGAAIAAAAMAAkAAAAGAAQAAAANAAgAAAAGAAIAAAANAAkAAAAGAAQAAAAOAAgAAAAGAAIAAAAOAAkAAAAGAAQAAAAPAAgAAAAGAAIAAAAPAAkAAAAGAAQAAAAAAAUAAAAAAAEAAAAAAAYAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAAQAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAAQAAAAAAABAAAAAAARAAAAAAACAAAAAAADAAAAAAABAAAAAAAFAAAAAAABAAAAAAAEAAAAAAABAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAJAAAAAAABAAAAAAAIAAAAAAABAAAAAAAKAAAAAAABAAAAAAALAAAAAAABAAAAAAAMAAAAAAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAABAAAAAAARAAEAAAACAAEAAAARAAIAAAACAAEAAAARAAMAAAACAAEAAAARAAQAAAACAAEAAAARAAUAAAACAAEAAAARAAYAAAACAAEAAAARAAcAAAACAAEAAAABAAEAAAABAAEAAAABAAIAAAABAAEAAAABAAMAAAABAAEAAAABAAQAAAABAAEAAAABAAUAAAABAAEAAAABAAYAAAABAAEAAAABAAcAAAABAAEAAAAGAAcAAAABAAEAAAAHAAcAAAABAAEAAAAIAAcAAAABAAEAAAAJAAcAAAABAAEAAAAKAAcAAAABAAEAAAALAAcAAAABAAEAAAAMAAcAAAABAAEAAAANAAcAAAABAAEAAAAOAAcAAAABAAEAAAAPAAcAAAABAAEAAAAQAAcAAAABAAEAAAAQAAYAAAABAAEAAAAQAAUAAAABAAEAAAAQAAQAAAABAAEAAAAQAAMAAAABAAEAAAAQAAIAAAABAAEAAAAQAAEAAAABAAEAAAAPAAEAAAABAAEAAAAOAAEAAAABAAEAAAANAAEAAAABAAEAAAAMAAEAAAABAAEAAAALAAEAAAABAAEAAAAKAAEAAAABAAEAAAAJAAEAAAABAAEAAAAIAAEAAAABAAEAAAAHAAEAAAABAAEAAAAGAAEAAAABAAEAAAAFAAEAAAABAAEAAAAEAAEAAAABAAEAAAADAAEAAAABAAEAAAACAAEAAAABAAEAAAACAAIAAAABAAEAAAACAAMAAAABAAEAAAACAAQAAAABAAEAAAACAAUAAAABAAEAAAACAAYAAAABAAEAAAACAAcAAAABAAEAAAADAAcAAAABAAEAAAAPAAIAAAABAAEAAAAPAAMAAAABAAEAAAAPAAQAAAABAAEAAAAPAAUAAAABAAEAAAAPAAYAAAABAAEAAAAOAAYAAAABAAEAAAAEAAcAAAABAAEAAAAFAAcAAAABAAEAAAAJAAYAAAABAAEAAAAKAAYAAAABAAEAAAALAAYAAAABAAEAAAAMAAYAAAABAAEAAAANAAYAAAABAAEAAAAIAAYAAAABAAEAAAAHAAYAAAABAAEAAAAGAAYAAAABAAEAAAAFAAYAAAABAAEAAAAEAAYAAAABAAEAAAADAAYAAAABAAEAAAADAAUAAAABAAEAAAADAAQAAAABAAEAAAADAAMAAAABAAEAAAADAAIAAAABAAEAAAAEAAIAAAABAAEAAAAEAAMAAAABAAEAAAAEAAQAAAABAAEAAAAEAAUAAAABAAEAAAAFAAUAAAABAAEAAAAFAAQAAAABAAEAAAAFAAMAAAABAAEAAAAFAAIAAAABAAEAAAAGAAIAAAABAAEAAAAGAAMAAAABAAEAAAAGAAQAAAABAAEAAAAGAAUAAAABAAEAAAAHAAUAAAABAAEAAAAHAAQAAAABAAEAAAAHAAMAAAABAAEAAAAHAAIAAAABAAEAAAAIAAIAAAABAAEAAAAIAAMAAAABAAEAAAAIAAQAAAABAAEAAAAIAAUAAAABAAEAAAAJAAIAAAABAAEAAAAJAAMAAAABAAEAAAAJAAQAAAABAAEAAAAJAAUAAAABAAEAAAAKAAUAAAABAAEAAAAKAAQAAAABAAEAAAAKAAMAAAABAAEAAAAKAAIAAAABAAEAAAALAAIAAAABAAEAAAALAAMAAAABAAEAAAALAAQAAAABAAEAAAALAAUAAAABAAEAAAAMAAUAAAABAAEAAAAMAAQAAAABAAEAAAAMAAMAAAABAAEAAAAMAAIAAAABAAEAAAANAAIAAAABAAEAAAANAAMAAAABAAEAAAANAAQAAAABAAEAAAANAAUAAAABAAEAAAAOAAUAAAABAAEAAAAOAAQAAAABAAEAAAAOAAMAAAABAAEAAAAOAAIAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_xt50i")
 
-[node name="RedBase" type="Sprite2D" parent="Bases" unique_id=1053737765]
-position = Vector2(42.999992, 70)
-scale = Vector2(0.155, 0.155)
-texture = ExtResource("3_v42vf")
+[node name="BattleGrid" type="Node2D" parent="." unique_id=340844221]
+z_index = 5
+position = Vector2(192, 32)
+script = ExtResource("2_7eff0")
 
-[node name="BlueBase" type="Sprite2D" parent="Bases" unique_id=1420954131]
-position = Vector2(171, 141)
-scale = Vector2(0.155, 0.155)
-texture = ExtResource("4_1f0x8")
+[node name="BlueBase" type="Node2D" parent="." unique_id=1442114151]
+
+[node name="Castle" type="Sprite2D" parent="BlueBase" unique_id=507637737]
+position = Vector2(92, 110.53125)
+scale = Vector2(1.3757812, 1.1442871)
+texture = ExtResource("3_qd8ff")
+
+[node name="RedBase" type="Node2D" parent="." unique_id=1670148234]
+
+[node name="Sprite2D" type="Sprite2D" parent="RedBase" unique_id=804309082]
+position = Vector2(1059.25, 465)
+scale = Vector2(1.4492189, 1.1328124)
+texture = ExtResource("4_admde")
+
+[node name="Decoration" type="Node2D" parent="." unique_id=838903480]
+
+[node name="TextureRect" type="TextureRect" parent="Decoration" unique_id=589966139]
+offset_left = -80.0
+offset_top = 108.0
+offset_right = 81.0
+offset_bottom = 336.0
+texture = SubResource("AtlasTexture_xt50i")
+
+[node name="TextureRect2" type="TextureRect" parent="Decoration" unique_id=199129095]
+offset_top = 161.0
+offset_right = 161.0
+offset_bottom = 389.0
+texture = SubResource("AtlasTexture_xt50i")
+
+[node name="TextureRect11" type="TextureRect" parent="Decoration" unique_id=461166883]
+offset_left = 81.0
+offset_top = 130.0
+offset_right = 242.0
+offset_bottom = 358.0
+texture = SubResource("AtlasTexture_xt50i")
+
+[node name="TextureRect12" type="TextureRect" parent="Decoration" unique_id=196853437]
+offset_left = -52.0
+offset_top = 228.0
+offset_right = 109.0
+offset_bottom = 456.0
+texture = SubResource("AtlasTexture_xt50i")
+
+[node name="TextureRect13" type="TextureRect" parent="Decoration" unique_id=177663468]
+offset_left = 23.0
+offset_top = 257.0
+offset_right = 184.0
+offset_bottom = 485.0
+texture = SubResource("AtlasTexture_xt50i")
+
+[node name="TextureRect14" type="TextureRect" parent="Decoration" unique_id=926616296]
+offset_left = 81.0
+offset_top = 276.0
+offset_right = 242.0
+offset_bottom = 504.0
+texture = SubResource("AtlasTexture_xt50i")
+
+[node name="TextureRect15" type="TextureRect" parent="Decoration" unique_id=190413127]
+offset_left = -33.0
+offset_top = 358.0
+offset_right = 128.0
+offset_bottom = 586.0
+texture = SubResource("AtlasTexture_xt50i")
+
+[node name="TextureRect16" type="TextureRect" parent="Decoration" unique_id=1223124456]
+offset_left = 48.0
+offset_top = 358.0
+offset_right = 209.0
+offset_bottom = 586.0
+texture = SubResource("AtlasTexture_xt50i")
+
+[node name="TextureRect3" type="TextureRect" parent="Decoration" unique_id=211793283]
+offset_left = 1025.0
+offset_top = -36.0
+offset_right = 1186.0
+offset_bottom = 192.0
+texture = SubResource("AtlasTexture_xt50i")
+
+[node name="TextureRect4" type="TextureRect" parent="Decoration" unique_id=623126592]
+offset_left = 949.0
+offset_top = -36.0
+offset_right = 1110.0
+offset_bottom = 192.0
+texture = SubResource("AtlasTexture_xt50i")
+
+[node name="TextureRect5" type="TextureRect" parent="Decoration" unique_id=2041443451]
+offset_left = 997.0
+offset_right = 1158.0
+offset_bottom = 228.0
+texture = SubResource("AtlasTexture_xt50i")
+
+[node name="TextureRect6" type="TextureRect" parent="Decoration" unique_id=1761850249]
+offset_left = 1025.0
+offset_top = 86.0
+offset_right = 1186.0
+offset_bottom = 314.0
+texture = SubResource("AtlasTexture_xt50i")
+
+[node name="TextureRect7" type="TextureRect" parent="Decoration" unique_id=1350559641]
+offset_left = 949.0
+offset_top = 66.0
+offset_right = 1110.0
+offset_bottom = 294.0
+texture = SubResource("AtlasTexture_xt50i")
+
+[node name="TextureRect8" type="TextureRect" parent="Decoration" unique_id=1986918616]
+offset_left = 929.0
+offset_top = 130.0
+offset_right = 1090.0
+offset_bottom = 358.0
+texture = SubResource("AtlasTexture_xt50i")
+
+[node name="TextureRect9" type="TextureRect" parent="Decoration" unique_id=193138273]
+offset_left = 997.0
+offset_top = 161.0
+offset_right = 1158.0
+offset_bottom = 389.0
+texture = SubResource("AtlasTexture_xt50i")
+
+[node name="TextureRect10" type="TextureRect" parent="Decoration" unique_id=1744783906]
+offset_left = 1064.0
+offset_top = 192.0
+offset_right = 1225.0
+offset_bottom = 420.0
+texture = SubResource("AtlasTexture_xt50i")
+
+[node name="Sheep" type="TextureRect" parent="Decoration" unique_id=1921179473]
+offset_left = 904.0
+offset_top = 485.0
+offset_right = 1032.0
+offset_bottom = 613.0
+texture = SubResource("AtlasTexture_tdoib")
+
+[node name="Sheep2" type="TextureRect" parent="Decoration" unique_id=988729259]
+offset_left = 48.0
+offset_top = 161.0
+offset_right = 176.0
+offset_bottom = 289.0
+texture = SubResource("AtlasTexture_tdoib")
+
+[node name="Sheep3" type="TextureRect" parent="Decoration" unique_id=1357148736]
+offset_left = 929.0
+offset_top = 294.0
+offset_right = 1057.0
+offset_bottom = 422.0
+texture = SubResource("AtlasTexture_tdoib")
