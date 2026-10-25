@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dtgipps2hgn6d"]
 
 [ext_resource type="Texture2D" uid="uid://bhbtb0wgbav84" path="res://Tiny_War_Assets/Terrain/Tileset/Tilemap_color3.png" id="1_ijbqd"]
-[ext_resource type="Script" uid="uid://fyx8lhryhvmx" path="res://battle_grid.gd" id="2_7eff0"]
+[ext_resource type="Script" uid="uid://fyx8lhryhvmx" path="res://scripts/battle_grid.gd" id="2_7eff0"]
 [ext_resource type="Texture2D" uid="uid://cyrn3g2s4i3fa" path="res://Tiny_War_Assets/Buildings/Black Buildings/Tower.png" id="3_qd8ff"]
 [ext_resource type="Texture2D" uid="uid://dejiyr1o50ngx" path="res://Tiny_War_Assets/Buildings/Red Buildings/Tower.png" id="4_admde"]
 [ext_resource type="Texture2D" uid="uid://c3bl6x8u1u7rn" path="res://Tiny_War_Assets/Terrain/Resources/Wood/Trees/Tree1.png" id="5_admde"]

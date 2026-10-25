@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bifoxcvc3gxy3"]
 
-[ext_resource type="Script" uid="uid://plhsgusjnrnl" path="res://scenes/coin_flip.gd" id="1_ip0qb"]
+[ext_resource type="Script" uid="uid://plhsgusjnrnl" path="res://scripts/coin_flip.gd" id="1_ip0qb"]
 
 [node name="CoinFlip" type="Node2D" unique_id=1405845099]
 script = ExtResource("1_ip0qb")
