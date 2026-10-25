@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://wmfnb0v84ovg"]
 
-[ext_resource type="Script" uid="uid://b3ru0wdr3mntw" path="res://main_menu.gd" id="1_1l2iv"]
+[ext_resource type="Script" uid="uid://b3ru0wdr3mntw" path="res://scripts/main_menu.gd" id="1_1l2iv"]
 [ext_resource type="Texture2D" uid="uid://bhbtb0wgbav84" path="res://Tiny_War_Assets/Terrain/Tileset/Tilemap_color3.png" id="2_qoj47"]
 [ext_resource type="Texture2D" uid="uid://djta272qxnj56" path="res://Tiny_War_Assets/UI Elements/UI Elements/Ribbons/BigRibbons.png" id="3_tq18k"]
 [ext_resource type="FontFile" uid="uid://bbpv5bsw0dfqm" path="res://Font/MedievalSharp-Regular.ttf" id="4_1sb1x"]

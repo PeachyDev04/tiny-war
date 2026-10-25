@@ -4,7 +4,7 @@ extends Control
 # When the player clicks Start Game
 func _on_start_button_pressed() -> void:
 	# Open the battle scene
-	get_tree().change_scene_to_file("res://2.1.4.1- 12x8 Map.tscn")
+	get_tree().change_scene_to_file("res://scenes/battle_map.tscn")
 
 
 # When the player clicks Exit
