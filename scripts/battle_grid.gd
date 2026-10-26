@@ -1,27 +1,33 @@
-@tool
-extends Node2D
+extends Node
 
 const COLUMNS = 12
 const ROWS = 8
-const TILE_SIZE = 64
 
-func _draw() -> void:
-	# vertical lines
-	for x in range(COLUMNS + 1):
-		var x_pos = x * TILE_SIZE
-		draw_line(
-			Vector2(x_pos, 0),
-			Vector2(x_pos, ROWS * TILE_SIZE),
-			Color(1, 1, 1, 0.6),
-			1.5
-		)
+const MELEE_MOVE = 3
+const RANGED_MOVE = 2
+const TANK_MOVE = 1
 
-	# horizontal lines
-	for y in range(ROWS + 1):
-		var y_pos = y * TILE_SIZE
-		draw_line(
-			Vector2(0, y_pos),
-			Vector2(COLUMNS * TILE_SIZE, y_pos),
-			Color(1, 1, 1, 0.6),
-			1.5
-		)
+
+func get_movement_range(unit_type: String) -> int:
+	if unit_type == "Melee":
+		return MELEE_MOVE
+	elif unit_type == "Ranged":
+		return RANGED_MOVE
+	elif unit_type == "Tank":
+		return TANK_MOVE
+
+	return 0
+
+
+func can_move(start: Vector2i, target: Vector2i, unit_type: String) -> bool:
+	# Check that the destination is inside the battlefield.
+	if target.x < 0 or target.x >= COLUMNS:
+		return false
+
+	if target.y < 0 or target.y >= ROWS:
+		return false
+
+	# Calculate the number of tiles moved.
+	var distance = abs(target.x - start.x) + abs(target.y - start.y)
+
+	return distance <= get_movement_range(unit_type)
